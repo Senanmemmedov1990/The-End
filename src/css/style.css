@@ -1,0 +1,456 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+  border: 0;
+  text-decoration: none;
+  list-style-type: none;
+  font-size: 12px;
+}
+
+a {
+  font-size: 15px;
+  color: #080808;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+@keyframes divhover {
+  from {
+    top: 85%;
+  }
+  to {
+    top: 100%;
+  }
+}
+
+.container {
+  width: 1300px;
+  margin: auto;
+}
+
+.sickyheader {
+  width: 100%;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 999999999 !important;
+}
+
+header {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10000000000000000000;
+}
+header section {
+  display: flex;
+  height: 100%;
+}
+header .rightside .pages {
+  padding: 0;
+}
+header .pages {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+header .pages:hover > div {
+  display: flex !important;
+  animation: divhover 0.2s;
+}
+header .pages > div {
+  display: none !important;
+  position: absolute;
+  top: 100%;
+  height: initial;
+  margin-left: -80px;
+  text-align: center;
+  padding: 35px;
+  background-color: black !important;
+}
+header .pages > div span {
+  display: block;
+  color: white;
+  margin-bottom: 35px;
+}
+header .pages > div a {
+  display: list-item;
+  color: gray;
+  transition: 0.2s;
+  transform: translate(0, 0);
+}
+header .pages > div a:not(:first-child) {
+  margin-top: 10px;
+}
+header .pages > div a:hover {
+  list-style-type: "-> ";
+  transform: translate(10px, 0);
+}
+header .pages:not(.wide) > div {
+  flex-direction: column;
+}
+header .pages.wide > div {
+  display: flex;
+  justify-content: space-between;
+  width: 1000px;
+}
+header .pages.wide > div .category {
+  text-align: start;
+}
+header .pages.wide > div .category span {
+  font-weight: bold;
+  font-size: 17px;
+}
+header .leftside {
+  display: flex;
+}
+header .logo {
+  justify-content: center;
+  align-items: center;
+}
+header .logo img {
+  height: 20px;
+}
+header .rightside .pages > div {
+  right: 0;
+  padding: 10px;
+}
+header .rightside .pages > div input {
+  background-color: black;
+  padding: 10px;
+  caret-color: grey;
+  color: white;
+}
+header .rightside .pages > a {
+  margin-left: 0;
+}
+header .rightside .pages > a i {
+  margin-right: 3px;
+}
+header .rightside > div:not(:last-child) {
+  margin-right: 20px;
+}
+
+footer .top {
+  display: flex;
+  margin: 100px 0;
+}
+footer .top div {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  padding-right: 100px;
+  margin-right: 90px;
+}
+footer .top div h2 {
+  font-size: 19px;
+  margin: 30px;
+  margin-left: 0;
+}
+footer .top div a {
+  margin-top: 15px;
+}
+footer .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+footer .bottom div {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+footer .bottom div span, footer .bottom div a {
+  margin-right: 10px;
+}
+footer .bottom .followus, footer .bottom .followus div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer .bottom .followus a, footer .bottom .followus i, footer .bottom .followus div a, footer .bottom .followus div i {
+  display: inline-block !important;
+  margin: 0 !important;
+}
+footer .bottom .followus a:not(:last-child), footer .bottom .followus div a:not(:last-child) {
+  margin-right: 10px !important;
+}
+footer a {
+  display: list-item;
+  margin-top: 10px;
+  color: black !important;
+  transition: 0.2s;
+  transform: translate(0, 0);
+}
+footer a:hover {
+  list-style-type: "-> ";
+  transform: translate(10px, 0);
+}
+
+.swiper-container {
+  height: 70vh;
+  width: 1400px;
+  overflow: hidden;
+}
+.swiper-container .navigations {
+  position: absolute;
+  left: 53px;
+  top: 15%;
+  transform: translate(0, -50%);
+  z-index: 9999;
+}
+.swiper-container .navigations .next {
+  position: relative;
+  margin-top: 20px;
+  font-weight: bold;
+  color: gray;
+}
+.swiper-container .navigations .next .line {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  width: 20px;
+  background-color: grey;
+  height: 2px;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+.swiper-container .navigations .next:hover::after {
+  width: 80px;
+  background-color: black;
+}
+.swiper-container .swiper-slide {
+  background-size: cover;
+  background-position: 50%;
+  min-height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.filterproduct .filter {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  margin-top: 70px;
+}
+.filterproduct .filter > div:first-child, .filterproduct .filter > div:last-child {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.filterproduct .filter div:first-child a {
+  margin-right: 30px;
+  color: gray;
+  font-size: 15px;
+  margin-left: 10px;
+}
+.filterproduct .filter div:first-child a.active {
+  color: black;
+  font-weight: bold;
+}
+.filterproduct .filter div:first-child a:hover {
+  color: darkslategrey;
+}
+.filterproduct .filter div:last-child {
+  position: relative;
+}
+.filterproduct .filter div:last-child:last-child:hover > div {
+  display: flex;
+  animation: divhover 0.2s;
+}
+.filterproduct .filter div:last-child > div {
+  display: none;
+  justify-content: space-between;
+  position: absolute;
+  right: -30px;
+  top: 100%;
+  width: 385px;
+  z-index: 999;
+  padding: 21px;
+  background-color: black;
+  overflow: hidden;
+}
+.filterproduct .filter div:last-child > div div {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0;
+}
+.filterproduct .filter div:last-child > div div span {
+  display: block;
+  margin-bottom: 15px;
+  color: white;
+  font-size: 17px;
+}
+.filterproduct .filter div:last-child > div div a {
+  color: gray;
+}
+.filterproduct .filter div:last-child > div div a:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+.filterproduct .filter a {
+  font-size: 17px;
+}
+.filterproduct .products {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.filterproduct .products .item {
+  display: block;
+  width: 280px;
+  height: 450px;
+  position: relative;
+}
+.filterproduct .products .item:hover .quicklook {
+  transform: translate(-50%, -57px);
+}
+.filterproduct .products .item > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 0px;
+  padding: 25px 20px;
+  width: 100%;
+}
+.filterproduct .products .item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.filterproduct .products .item .quicklook {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%, -31px);
+  transition: 0.5s all;
+}
+.filterproduct .products .item .quicklook > span, .filterproduct .products .item .quicklook > div {
+  padding: 5px;
+}
+.filterproduct .products .item .quicklook > span {
+  padding: 0 20px;
+}
+.filterproduct .products .item .quicklook > div {
+  background-color: gray;
+}
+.filterproduct .products .item > div:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px 0;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+}
+.filterproduct .products .item > div:last-child span:first-child {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#hamburgermenu {
+  position: fixed;
+  right: 0;
+  top: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #0F0F0F;
+  width: 650px;
+  min-height: 100vh;
+  color: white;
+  text-align: center;
+  padding: 70px;
+  overflow: hidden;
+  display: none;
+  z-index: 99999999999;
+}
+#hamburgermenu .closeBtn {
+  position: absolute;
+  right: 40px;
+  top: 10px;
+  cursor: pointer;
+  padding: 10px;
+  display: inline-block;
+  font-size: 30px;
+}
+#hamburgermenu > span {
+  color: #fff !important;
+}
+#hamburgermenu > p {
+  color: #929292;
+  font-size: 24px;
+  margin: 30px;
+}
+#hamburgermenu #instagramData {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+  margin: 20px;
+}
+#hamburgermenu #instagramData .items {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  height: 100%;
+  width: 100%;
+}
+#hamburgermenu #instagramData .items .item {
+  width: 20%;
+}
+#hamburgermenu #instagramData .items .item a {
+  width: inherit;
+}
+#hamburgermenu #instagramData .items .item a img {
+  width: 100%;
+}
+#hamburgermenu .followus {
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #0F0F0F;
+}
+#hamburgermenu .followus div:first-child {
+  color: #afafaf;
+  font-weight: bold;
+  font-size: 20px;
+}
+#hamburgermenu .followus div:last-child {
+  padding: 30px;
+}
+#hamburgermenu .followus div:last-child a {
+  color: white;
+}
+#hamburgermenu .followus div:last-child a:not(:last-child) {
+  margin-right: 25px;
+}/*# sourceMappingURL=style.css.map */

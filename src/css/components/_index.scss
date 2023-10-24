@@ -1,0 +1,206 @@
+.swiper-container {
+	height: 70vh;
+	width: 1400px;
+	overflow: hidden;
+
+	.navigations {
+		position: absolute;
+		left: 53px;
+		top: 15%;
+		transform: translate(0,-50%);
+		z-index: 9999;
+
+		.next {
+			position: relative;
+			margin-top: 20px;
+			font-weight: bold;
+			color: gray;
+
+			& .line {
+				position: absolute;
+				left: 20px;
+				top: 50%;
+				width: 20px;
+				background-color: grey;
+				height: 2px;
+				cursor: pointer;
+				transition: 0.3s all;
+			}
+
+			&:hover::after {
+				width: 80px;
+				background-color: black;
+			}
+		}
+	}
+
+	.swiper-slide {
+		background-size: cover;
+		background-position: 50%;
+		min-height: 20vh;
+		
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+  }
+}
+
+.filterproduct {
+
+	.filter {
+		display: flex;
+		justify-content: space-between;
+		height: 80px;
+		margin-top: 70px;
+
+		& > div:first-child, & > div:last-child {
+			height: 100%;
+			display: flex;
+			align-items: center;
+		}
+
+		div:first-child {
+			a {
+				margin-right: 30px;
+				color: gray;
+				font-size: 15px;
+				margin-left: 10px;
+			}
+	
+			a.active {
+				color: black;
+				font-weight: bold;
+			}
+
+			a:hover {
+				color: darkslategrey;
+			}
+		}
+
+		div:last-child {
+			position: relative;
+
+			&:last-child:hover > div {
+				display: flex;
+				animation: divhover 0.2s;
+			}
+
+			& > div {
+				display: none;
+				justify-content: space-between;
+				position: absolute;
+				right: -30px;
+				top: 100%;
+				width: 385px;
+				z-index: 999;
+				padding: 21px;
+				background-color: black;
+				overflow: hidden;
+
+				div {
+					display: flex;
+					flex-direction: column;
+					position: relative;
+					padding: 0;
+
+					span {
+						display: block;
+						margin-bottom: 15px;
+						color: white;
+						font-size: 17px;
+					}
+					a {
+						color: gray;
+
+						&:hover {
+							color: #ffffff99;
+						}
+					}
+				}
+			}
+		}
+
+		a {
+			font-size: 17px;
+		}
+	}
+	
+	.products {
+		display: flex;
+		justify-content: space-between;
+		gap: 50px;
+		flex-wrap: wrap;
+		width: 100%;
+		
+		.item {
+			display: block;
+			width: 280px;
+			height: 450px;
+			position: relative;
+
+			&:hover .quicklook {
+				transform: translate(-50%, -57px);
+			}
+	
+			& > div:first-child {
+				display: flex;
+				justify-content: space-between;
+				position: absolute;
+				top: 0px;
+				padding: 25px 20px;
+				width: 100%;
+			}
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			.quicklook {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: black;
+				color: white;
+				position: absolute;
+				bottom: 0px;
+				left: 50%;
+				transform: translate(-50%, -31px);
+				transition: 0.5s all;
+
+				& > span, & > div {
+					padding: 5px;
+				}
+
+				& > span {
+					padding: 0 20px;
+				}
+
+				& > div {
+					background-color: gray;
+				}
+			}
+	
+			& > div:last-child {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				width: 100%;
+				padding: 10px 0;
+				background-color: white;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				z-index: 999;
+
+				span:first-child {
+					font-weight: bold;
+					font-size: 18px;
+				}
+			}
+		}
+	}
+}
